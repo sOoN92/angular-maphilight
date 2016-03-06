@@ -1,7 +1,7 @@
 # Angular Maphilight
 An AngularJS Directive that adds highlights to image maps.
 
-[Example 2 in the docs]: https://cdn-images-1.medium.com/max/800/1*NyFdxMXz9E2iDdinzMh-LQ.png
+![alt text](https://cdn-images-1.medium.com/max/800/1*NyFdxMXz9E2iDdinzMh-LQ.png "Example 2 in the docs")
 
 ### Examples and Documentation:
 - [Website and Docs](http://abdallamohamed.github.io/Angular-Maphilight/)
