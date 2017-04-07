@@ -43,13 +43,6 @@ angular.module('app', [
                 url: "/Contact",
                 templateUrl: "documentation/html/contact.html",
                 controller: 'contactController'
-            })
-
-
-            .state('documentation', {
-                url: "/Docs",
-                templateUrl: "documentation/html/documentation.html",
-                controller: 'documentationController'
             });
 
 
