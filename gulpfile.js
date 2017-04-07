@@ -4,10 +4,6 @@ var gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     angularFilesort = require('gulp-angular-filesort');
 
-
-
-// > gulp build
-
 gulp.task('build', function () {
     gulp.src([
         './lib/angular.maphilight.js'
@@ -18,3 +14,5 @@ gulp.task('build', function () {
         .pipe(concat('angular.maphilight.min.js'))
         .pipe(gulp.dest('./lib'));
 });
+
+gulp.task('default', ['build']);
