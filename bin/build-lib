@@ -24,8 +24,4 @@ jq --slurp 'del(.[0].scripts, .[0].dependencies, .[0].devDependencies)[0]
 mv package.new.json package.json
 cat package.json
 
-# ngmakelib was adding an unnecessary — and very strange — "ɵa" alias to the export
-# export { MaphilightModule, MaphilightComponent as ɵa };
-sed -i 's/MaphilightComponent as [^ ]*/MaphilightComponent/g' *.ts *.js
-
 # Now can npm publish
