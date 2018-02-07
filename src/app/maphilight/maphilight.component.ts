@@ -25,8 +25,8 @@ export class MaphilightComponent implements AfterViewInit {
   @Input() config: any;
   configDiffer: KeyValueDiffer<any, any>;
   el:  HTMLElement;
-  img: HTMLElement;
-  map: HTMLElement;
+  img: HTMLImageElement;
+  map: HTMLMapElement;
   events = {
     imgLoaded: new Subject<undefined>(),
     updateMaphilight: new Subject<any>(),
@@ -52,7 +52,6 @@ export class MaphilightComponent implements AfterViewInit {
     // which causes mouseover effect to break.
     // See also  https://stackoverflow.com/questions/16084374/jquery-width-and-height-return-0-for-img-element
     this.img.onload = () => {
-      console.log('img onload')
       this.events.imgLoaded.next()
       this.updateMaphilight();
     }

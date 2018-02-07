@@ -52,7 +52,7 @@ export class Example2Component {
     })
     this.maphilightComponent.events.updateMaphilight.subscribe(() => {
       console.log('updateMaphilight')
-    }
+    })
   }
 
 }
