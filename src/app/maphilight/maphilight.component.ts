@@ -5,6 +5,7 @@ import {
   ElementRef,
   DoCheck, KeyValueDiffers, KeyValueDiffer,
 } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 declare global {
   interface Window {
@@ -26,6 +27,10 @@ export class MaphilightComponent implements AfterViewInit {
   el:  HTMLElement;
   img: HTMLElement;
   map: HTMLElement;
+  events = {
+    imgLoaded: new Subject<undefined>(),
+    updateMaphilight: new Subject<any>(),
+  }
 
   constructor(
     private elRef: ElementRef,
@@ -42,17 +47,27 @@ export class MaphilightComponent implements AfterViewInit {
     this.img.setAttribute('usemap', '#' + id + ".map");
     this.map.setAttribute('id',           id + ".map");
     this.map.setAttribute('name',         id + ".map");
-    this.drawCanvas();
+
+    // Wait until image is loaded. Otherwise the $(img).height() in maphilight.js may return 0,
+    // which causes mouseover effect to break.
+    // See also  https://stackoverflow.com/questions/16084374/jquery-width-and-height-return-0-for-img-element
+    this.img.onload = () => {
+      console.log('img onload')
+      this.events.imgLoaded.next()
+      this.updateMaphilight();
+    }
   }
 
-  drawCanvas() {
+  updateMaphilight() {
+    if (!this.img) return;
+    this.events.updateMaphilight.next()
     window.jQuery(this.img).maphilight(this.configToApply());
   };
 
   ngDoCheck() {
     const changes = this.configDiffer.diff(this.config)
     if (changes) {
-      this.drawCanvas()
+      this.updateMaphilight()
     }
   }
 
