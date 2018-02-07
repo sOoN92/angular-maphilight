@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./example2.component.css']
 })
 export class Example2Component implements OnInit {
+  hidden = true
   config = {
     fade: true,
-    alwaysOn: true,
+    alwaysOn: false,
     neverOn: false,
 
     // fill

@@ -6,6 +6,11 @@
     </div>
   </div>
   <div>
+    <label>
+      <input type="checkbox" [(ngModel)]="hidden" [value]="true" name="hidden"> Image is hidden
+    </label>
+  </div>
+  <div>
     <div class="col-md-6">
       <div class="panel panel-danger">
         <div class="panel-heading">
@@ -163,8 +168,9 @@
         <maphilight
           id="statesMap"
           [config]="config"
+          [hidden]="hidden"
         >
-        <img src="assets/states_imgmap.gif" width="480" height="330" class="img-responsive">
+        <img src="assets/states_imgmap.gif">
 
         <map>
           <area shape="poly"
