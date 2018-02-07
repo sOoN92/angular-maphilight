@@ -281,7 +281,7 @@ var Example2Component = /** @class */ (function () {
         // - https://stackoverflow.com/questions/1472303/jquery-get-width-of-element-when-not-visible-display-none
         // - https://stackoverflow.com/questions/2345784/jquery-get-height-of-hidden-element-in-jquery
         this.maphilightComponent.events.imgLoaded.subscribe(function () {
-            console.log("this.img.height=", _this.maphilightComponent.img.height, "window.jQuery(this.img).height()=", window.jQuery(_this.maphilightComponent.img).height());
+            console.log("img.height=", _this.maphilightComponent.img.height, "$(this.img).height()=", window.jQuery(_this.maphilightComponent.img).height());
             _this.hidden = true;
         });
         this.maphilightComponent.events.updateMaphilight.subscribe(function () {
@@ -433,7 +433,6 @@ var MaphilightComponent = /** @class */ (function () {
         // which causes mouseover effect to break.
         // See also  https://stackoverflow.com/questions/16084374/jquery-width-and-height-return-0-for-img-element
         this.img.onload = function () {
-            console.log('img onload');
             _this.events.imgLoaded.next();
             _this.updateMaphilight();
         };

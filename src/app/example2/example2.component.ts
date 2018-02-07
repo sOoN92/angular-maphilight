@@ -46,8 +46,8 @@ export class Example2Component {
     // - https://stackoverflow.com/questions/1472303/jquery-get-width-of-element-when-not-visible-display-none
     // - https://stackoverflow.com/questions/2345784/jquery-get-height-of-hidden-element-in-jquery
     this.maphilightComponent.events.imgLoaded.subscribe(() => {
-      console.log("this.img.height=", this.maphilightComponent.img.height,
-                  "window.jQuery(this.img).height()=", window.jQuery(this.maphilightComponent.img).height())
+      console.log("img.height=", this.maphilightComponent.img.height,
+                  "$(this.img).height()=", window.jQuery(this.maphilightComponent.img).height())
       this.hidden = true
     })
     this.maphilightComponent.events.updateMaphilight.subscribe(() => {
