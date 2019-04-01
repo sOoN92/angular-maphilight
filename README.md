@@ -12,8 +12,6 @@ npm i 'ng-maphilight' --save
 
 Import jQuery and maphilight plugin into the <head></head> of the index.html file
 ```
-import { MaphilightModule } from 'ng-maphilight'
-```
 <head>
 ....
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,14 +19,12 @@ import { MaphilightModule } from 'ng-maphilight'
   </head>
 ```
 
+
 In your module:
 ```
 import { MaphilightModule } from 'ng-maphilight'
 ```
 and add `MaphilightModule` to the `imports` array.
-```
-import { MaphilightModule } from 'ng-maphilight'
-```
 
 In your component class, define a `config` property.
 ```
