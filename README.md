@@ -5,13 +5,50 @@ An Angular Directive that adds highlights to image maps.
 
 ## Usage
 
+Install the package via npm
+```
+npm i 'ng-maphilight' --save
+```
+
+Import jQuery and maphilight plugin into the <head></head> of the index.html file
+```
+import { MaphilightModule } from 'ng-maphilight'
+```
+<head>
+....
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://rawcdn.githack.com/kemayo/maphilight/7932449fbc49c7767fbd72a807110c632c11ee95/jquery.maphilight.js"></script>
+  </head>
+```
+
 In your module:
 ```
 import { MaphilightModule } from 'ng-maphilight'
 ```
 and add `MaphilightModule` to the `imports` array.
+```
+import { MaphilightModule } from 'ng-maphilight'
+```
 
 In your component class, define a `config` property.
+```
+config = {
+    "fade": true, 
+    "alwaysOn": false,
+    "neverOn": false,
+    "fill": true,
+    "fillColor": "#ffffff",
+    "fillOpacity": 0.4,
+    "stroke": true,
+    "strokeColor": "#4d0ec0",
+    "strokeOpacity": 1,
+    "strokeWidth": 1,
+    "shadow": true,
+    "shadowColor": "#000000",
+    "shadowOpacity": 0.8,
+    "shadowRadius": 10
+  }
+```
 
 In your template:
 ```
